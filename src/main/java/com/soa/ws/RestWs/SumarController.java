@@ -21,5 +21,32 @@ public class SumarController {
         return suma;
     }
 
+    @RequestMapping("/restar")
+    public Tupla restar(@RequestParam(value = "numero1", defaultValue = "0") int numero1,
+                       @RequestParam(value = "numero2", defaultValue = "0") int numero2) {
+        Tupla restar;
+
+        restar = new Tupla(cant.incrementAndGet(), numero1-numero2);
+        return restar;
+    }
+
+    @RequestMapping("/multiplicar")
+    public Tupla multiplicar(@RequestParam(value = "numero1", defaultValue = "0") int numero1,
+                             @RequestParam(value = "numero2", defaultValue = "0") int numero2) {
+        Tupla multiplicar;
+
+        multiplicar = new Tupla(cant.incrementAndGet(), numero1*numero2);
+        return multiplicar;
+    }
+
+    @RequestMapping("/dividir")
+    public Tupla dividir(@RequestParam(value = "numero1", defaultValue = "0") int numero1,
+                             @RequestParam(value = "numero2", defaultValue = "0") int numero2) {
+        Tupla dividir;
+
+        dividir = new Tupla(cant.incrementAndGet(), numero1/numero2);
+        return dividir;
+    }
+
 
 }
